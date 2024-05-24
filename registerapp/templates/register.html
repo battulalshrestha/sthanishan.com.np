@@ -1,0 +1,109 @@
+<!--{% load static %}
+<form>
+<head>
+<title> Detail varnu parne thau </title>
+<link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+<h1> Detail vara hai ta!!</h1>
+<div class=" card">
+<div class="card-header">
+<div class="text-header" > Afno detail dine thau </div><br>
+<div class="card-body">
+    <form action="" method="post">
+        {% csrf_token %}
+
+        <div class="form-group">
+            <label for="Username">Username vara hai ta:</label><br>
+            <input required =" " class="form-control" name ="username_rakha" id = "Username" type="Username">
+        </div>
+<br>
+            <div class="form-group">
+                <label for = "Email">Email hala hai ta :</label><br>
+                <input required ="" class="form-control" name = "email_rakha" id = "email" type="email">
+            </div>
+        </br>
+        <br>
+                <div class="form-group">
+                    <label for ="Password">Password hala hai ta:</label><br>
+                    <input required="" class="form-control" name = "password_rakha" id = "Password" type = "password">
+                    </div>
+                </br>
+                <br>
+                <div class="form-group">
+                    <label for = "Confirm-password"> Confirm password feri same rakha hai ta:</label><br>
+                    <input required = "" class="form-control" name = "password_thikcha" id = "Confirm-password" type = "password">
+                </div>
+            </br>
+                <label for =" submit"> submit ma thicha hai ta:</label>
+                <input type="submit" class="btn" value="submit ">
+            </div>
+        </br>
+    </body>      
+</div>
+</div>
+
+
+</form> -->
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail varnu parne thau</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <h1>Detail vara hai ta!!</h1>
+    <div class="card">
+        <div class="card-header">
+            <div class="text-header">Afno detail dine thau</div>
+        </div>
+        <div class="card-body">
+            <form action="" method="post">
+                {% csrf_token %}
+
+                <div class="form-group">
+                    <label for="Username">Username vara hai ta:</label><br>
+                    <input required class="form-control" name="username_rakha" id="Username" type="text">
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="Email">Email hala hai ta:</label><br>
+                    <input required class="form-control" name="email_rakha" id="email" type="email">
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="Password">Password hala hai ta:</label><br>
+                    <input required class="form-control" name="password_rakha" id="Password" type="password">
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="Confirm-password">Confirm password feri same rakha hai ta:</label><br>
+                    <input required class="form-control" name="password_thikcha" id="Confirm-password" type="password">
+                </div>
+                <br>
+                <label for="submit">submit ma thicha hai ta:</label>
+                <input type="submit" class="btn" value="submit">
+            </form>
+        </div>
+        {% if messages %}
+        {% for message in messages %}
+     <p>{{ message }}</p>
+     {% endfor %}
+     {% endif %}
+ <!--  </div>
+    <h1> Aba table ma dekhauxu hai ta!</h1>
+    <table>
+        <tr>
+            <th> username_rakha</th>
+            <th>email_rakha</th>
+            <th>password_rakha</th>
+            <th>password_thikcha</th>
+        </tr>
+    </table> -->
+</body>
+</html> 

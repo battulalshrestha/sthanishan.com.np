@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>data dekhauney page</title>
+    <link rel="stylesheet" href="{% static 'data.css' %}">
+
+</head>
+<body>
+
+    <h1>data majjale dekhau la!!</h1>
+    <table style="width: 50%">
+        <tr>
+            <th>id</th>
+            <th> username_lekha</th>
+            <th>email_lekha</th>
+            <th>password_lekha</th>
+        <th>same password_lekha</th>
+        <th>Action</th>
+        </tr>
+        {% for std in data %}
+        <tr>
+            <td>{{std.id}}</td>
+            <td>{{std.username_rakha}}</td>
+            <td>{{std.email_rakha}}</td>
+            <td>{{std.password_lekha}}</td>
+            <td>{{std.password_thikcha}}</td>
+            <td>
+                <a href=" {% url 'faldeuhai' std.id %}">Delete</a>
+                <a href="{% url 'edit' std.id %}">Edit</a>
+
+            </td>
+
+            {% endfor %}
+        </tr>
+    </table>
+</body>
+</html>
